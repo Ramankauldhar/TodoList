@@ -4,7 +4,8 @@ from .models import TodoList
 # Create your views here.
 
 def home(request):
-    return render(request, "TodoApp/home.html", {})
+    list = TodoList.objects.all()
+    return render(request, "TodoApp/home.html", {'list':list})
 
 def addList(request):
     if request.method == 'POST':

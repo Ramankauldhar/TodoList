@@ -14,6 +14,36 @@
   <body>
     {% include 'TodoApp/navigation.html' %}
     <h1 class="text-center my-3">Todo App</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="col-md-12 bg-secondary">List of Todo Task</h2>
+          <div class="card">
+            <div class="card-body">
+              <table class="table bg-light">
+                <thead>
+                  <th>Number</th>
+                  <th>Task</th>
+                  <th>Description</th>
+                  <th>Date and Time</th>
+                </thead>
+                <tbody>
+                  {% for l in list %}
+                  <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{l.task}}</td>
+                    <td>{{l.description}}</td>
+                    <td>{{l.date}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
