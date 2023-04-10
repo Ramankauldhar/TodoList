@@ -26,3 +26,7 @@ def addList(request):
 
     return render(request, "TodoApp/addList.html", {})
 
+def deleteList(request, id):
+    list = TodoList.objects.get(pk=id)
+    list.delete()
+    return redirect("/TodoApp/home")

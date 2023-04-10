@@ -5,4 +5,5 @@ urlpatterns = [
     path("", home),
     path("home/",home),
     path("addList/",addList),
+    path("deleteList/<int:id>",deleteList),
 ]

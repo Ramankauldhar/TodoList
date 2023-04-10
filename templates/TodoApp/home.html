@@ -12,16 +12,16 @@
     <title>TodoApp</title>
   </head>
   <body>
+    <h1 class="text-center bg-primary text-info">Todo App</h1>
     {% include 'TodoApp/navigation.html' %}
-    <h1 class="text-center my-3">Todo App</h1>
 
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="col-md-12 bg-secondary">List of Todo Task</h2>
+          <h2 class="col-md-12 my-3 text-secondary text-center">List of Todo Task</h2>
           <div class="card">
             <div class="card-body">
-              <table class="table bg-light">
+              <table class="table bg-light table-striped">
                 <thead>
                   <th>Number</th>
                   <th>Task</th>
@@ -35,6 +35,12 @@
                     <td>{{l.task}}</td>
                     <td>{{l.description}}</td>
                     <td>{{l.date}}</td>
+                    <td>
+                      <a href="/TodoApp/updateList/{{l.id}}" class="btn btn-warning md-sm">Edit</a>
+                    </td>
+                    <td>
+                      <a href="/TodoApp/deleteList/{{l.id}}" class="btn btn-danger md-sm">Delete</a>
+                    </td>
                   </tr>
                   {% endfor %}
                 </tbody>

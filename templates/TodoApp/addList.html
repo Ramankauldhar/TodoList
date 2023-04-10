@@ -11,11 +11,12 @@
     <title>TodoApp</title>
   </head>
   <body>
+    <h1 class="text-center bg-primary text-info">Todo App</h1>
     {% include 'TodoApp/navigation.html' %}
-    <h1 class="text-center my-3">Add new Todo List</h1>
+    <h2 class="col-md-12 my-3 text-secondary text-center">Add new Todo List</h2>
     <div class = "container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card bg-light">
                     <div class="card-body">
                         <form action="/TodoApp/addList/" method="POST">
