@@ -18,18 +18,19 @@
             <div class="col-md-12">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <form action="">
+                        <form action="/TodoApp/addList/" method="POST">
+                            {% csrf_token %}
                             <div class="md-3">
                                 <label for="task">Task</label>
-                                <input type="text" id="task" class="form-control" required>
+                                <input type="text" name="task" id="task" class="form-control" required>
                             </div>
                             <div class="md-3">
                                 <label for="task">Description</label>
-                                <textarea rows="4" cols="50" id="description" class="form-control" required></textarea>
+                                <textarea rows="4" cols="50" name="description" id="description" class="form-control" required></textarea>
                             </div>
                             <div class="md-3">
-                                <label for="task">Time</label>
-                                <input type="date" id="time" class="form-control" required>
+                                <label for="task">Date and Time</label>
+                                <input type="datetime-local" name="dateandtime" id="dayAndtime" class="form-control" required>
                             </div>
                             <div class="container text-center my-2">
                                 <button  id="addButton" class="btn bg-info">Add</button>
