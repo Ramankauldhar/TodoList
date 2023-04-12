@@ -30,3 +30,8 @@ def deleteList(request, id):
     list = TodoList.objects.get(pk=id)
     list.delete()
     return redirect("/TodoApp/home")
+
+def updateList(request, id):
+    list = TodoList.objects.get(pk=id)
+    return render(request, "TodoApp/updateList.html", {'list':list})
+

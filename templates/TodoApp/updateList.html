@@ -1,4 +1,5 @@
 <!doctype html>
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -12,7 +13,7 @@
   <body>
     <h1 class="text-center bg-primary text-info">Todo App</h1>
     {% include 'TodoApp/navigation.html' %}
-    <h2 class="col-md-12 my-3 text-secondary text-center">Add new Todo List</h2>
+    <h2 class="col-md-12 my-3 text-secondary text-center">Update Todo List</h2>
     <div class = "container">
         <div class="row">
             <div class="col-md-12">
@@ -22,18 +23,18 @@
                             {% csrf_token %}
                             <div class="md-3">
                                 <label for="task">Task</label>
-                                <input type="text" name="task" id="task" class="form-control" required>
+                                <input type="text" name="task" id="task" class="form-control" required value="{{list.task}}">
                             </div>
                             <div class="md-3">
                                 <label for="task">Description</label>
-                                <textarea rows="4" cols="50" name="description" id="description" class="form-control" required></textarea>
+                                <textarea rows="4" cols="50" name="description" id="description" class="form-control" required>{{list.description}}</textarea>
                             </div>
                             <div class="md-3">
                                 <label for="task">Date and Time</label>
-                                <input type="datetime-local" name="dateandtime" id="dayAndtime" class="form-control" required>
+                                <input type="datetime-local" name="dateandtime" id="dayAndtime" class="form-control" required value="{{list.date}}">
                             </div>
                             <div class="container text-center my-2">
-                                <button  id="addButton" class="btn bg-info">Add</button>
+                                <button  id="addButton" class="btn bg-info">Update</button>
                             </div>  
                         </form>
                     </div>

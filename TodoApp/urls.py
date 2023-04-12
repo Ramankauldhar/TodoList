@@ -6,4 +6,5 @@ urlpatterns = [
     path("home/",home),
     path("addList/",addList),
     path("deleteList/<int:id>",deleteList),
+    path("updateList/<int:id>",updateList),
 ]
