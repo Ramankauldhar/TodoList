@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <form action="/TodoApp/addList/" method="POST">
+                        <form action="/TodoApp/update/{{list.id}}" method="POST">
                             {% csrf_token %}
                             <div class="md-3">
                                 <label for="task">Task</label>

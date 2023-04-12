@@ -35,3 +35,16 @@ def updateList(request, id):
     list = TodoList.objects.get(pk=id)
     return render(request, "TodoApp/updateList.html", {'list':list})
 
+def update(request, id):
+    user_task = request.POST.get("task")
+    user_description = request.POST.get("description")
+    user_date = request.POST.get("dateandtime")
+    
+    list = TodoList.objects.get(pk=id)
+    list.task = user_task
+    list.description = user_description
+    list.date = user_date
+    list.save()
+    return redirect("/TodoApp/home")
+
+
